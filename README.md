@@ -130,9 +130,10 @@ For acceleration data we have to dropdown variables (acc_measures, acc_axes) and
 Bus can data is seperated in three differents visualization panels, evry panel shows the variable with the same scale, you can select to show one  graphe by clicking on the variable on the legend, or you can select more by clicking on control then selecting all the wanted variables.
 <br/><br/>
   ![blobtrigger](https://sensordatamining.blob.core.windows.net/vehicule-data-output-2/Capture11.PNG
- "blobtrigger")  
+ "blobtrigger") 
+<br/><br/>
 
-    <br/><br/>
+
   ![blobtrigger](https://sensordatamining.blob.core.windows.net/vehicule-data-output-2/Capture12.PNG
  "blobtrigger")  
 
