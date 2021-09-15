@@ -77,20 +77,27 @@ func start
 * [Azure Blob Storage](https://azure.microsoft.com/fr-fr/services/storage/blobs/) -  Blob Storage is optimized for storing massive amounts of unstructured data.
 
 ## Grafana dashboard
+To acces grafana dashboard you shoud type the following URL in the browser then insert credentials (user: Admin / pass: Hutchinson2021)
+  <br/><br/> 
+  ![blobtrigger](https://sensordatamining.blob.core.windows.net/vehicule-data-output-2/Capture9.PNG
+ "blobtrigger")  
+    <br/><br/>
+  ![blobtrigger](https://sensordatamining.blob.core.windows.net/vehicule-data-output-2/Capture10.PNG
+ "blobtrigger")  
+    <br/><br/>
 After sending data to influxdb database we need to connect grafana to influxdb database, in order to visualize data.
 These are the database connection credentials needed to connect influxdb database to grafana:
-user: telegraf
-password: Hutchinson2021
-database: ConnectedCar_data 
-port: 8086
-host: localhost
+* user: telegraf
+* password: Hutchinson2021
+* database: ConnectedCar_data 
+* port: 8086
+* host: localhost
 
   <br/><br/> 
   ![blobtrigger](https://sensordatamining.blob.core.windows.net/vehicule-data-output-2/capture6.PNG
  "blobtrigger")  
     <br/><br/>
 
-  <br/><br/> 
   ![blobtrigger](https://sensordatamining.blob.core.windows.net/vehicule-data-output-2/Capture7.PNG
  "blobtrigger")  
     <br/><br/>
