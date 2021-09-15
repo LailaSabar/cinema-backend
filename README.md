@@ -78,11 +78,6 @@ func start
 
 ## Grafana dashboard
 To acces grafana dashboard you shoud type the following URL in the browser then insert credentials (user: Admin / pass: Hutchinson2021)
-
-After sending data to influxdb database we need to connect grafana to influxdb database, in order to visualize data, for that we need to create a new data source in grafana, or directly use it if it is already created.
-<br/><br/> 
-  ![blobtrigger](https://sensordatamining.blob.core.windows.net/vehicule-data-output-2/Capture4.PNG
- "blobtrigger")
   <br/><br/> 
   ![blobtrigger](https://sensordatamining.blob.core.windows.net/vehicule-data-output-2/Capture9.PNG
  "blobtrigger")  
@@ -90,6 +85,11 @@ After sending data to influxdb database we need to connect grafana to influxdb d
   ![blobtrigger](https://sensordatamining.blob.core.windows.net/vehicule-data-output-2/Capture10.PNG
  "blobtrigger")  
     <br/><br/>
+After sending data to influxdb database we need to connect grafana to influxdb database, in order to visualize data, for that we need to create a new data source in grafana, or directly use it if it is already created.
+<br/><br/> 
+  ![blobtrigger](https://sensordatamining.blob.core.windows.net/vehicule-data-output-2/Capture4.PNG
+ "blobtrigger")
+  <br/><br/> 
 These are the database connection credentials needed to connect influxdb database to grafana:
 * user: telegraf
 * password: Hutchinson2021
