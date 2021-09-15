@@ -1,7 +1,8 @@
 # Connected Car Project - Data Processing (v 1.0)
 After exploring the different data formats of the connected car (tdms, gps, and txt), which were shared on a fileshare in Azure, the first objective was to make this data in a valid format in order to send it to a time-series database InfluxDB.  
 The idea was to automate the data preprocessing process using Azure function Blob Trigger, which triggers the execution of the script when a new file is sent to the input blob container(or a file is modified), and the python script can process the received data and sends it to InfluxDB.  
-To visualize this data we chose Grafana which can easily connect to influxDB, both are installed on an Azure virtual machine, and the solution is hosted on the Nginx web server.   
+To visualize this data we chose Grafana which can easily connect to influxDB, both are installed on an Azure virtual machine, and the solution is hosted on the Nginx web server. 
+<br/>
 Below is the architecture of the project.
 <br/><br/>
 ![Project diagram](https://sensordatamining.blob.core.windows.net/vehicule-data-output-2/Shema2.PNG "Project diagram")
