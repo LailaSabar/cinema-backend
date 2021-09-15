@@ -4,10 +4,9 @@ The idea was to automate the data preprocessing process using Azure function Blo
 To visualize this data we chose Grafana which can easily connect to influxDB, both are installed on an Azure virtual machine, and the solution is hosted on the Nginx web server.   
 Below is the architecture of the project.
 <br/><br/>
-![Project diagram](https://sensordatamining.blob.core.windows.net/vehicule-data-output-2/Shema2.PNG
- "Project diagram")
- <br/><br/>
- # Project Demonstration
+![Project diagram](https://sensordatamining.blob.core.windows.net/vehicule-data-output-2/Shema2.PNG "Project diagram")
+<br/><br/>
+# Project Demonstration
  
 The first step is the acquisition of data from the connected car, there are 4 types of file extensions, tdms files which represent the acceleration data, gps files for tracking gps data, and txt files that contain bus can data with differents variables (ANGLE_VOLANT, REGIME_MOTEUR ...), the duration of every file is 10 minutes.    
 After the acquisition, data is sent to an Azure file share with the name "sdmsharefile", and located in "cssdm" storage account.  
