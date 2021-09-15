@@ -6,33 +6,33 @@ Below is the architecture of the project:
 <br/><br/> <br/><br/> 
 ![Project diagram](https://sensordatamining.blob.core.windows.net/vehicule-data-output-2/Shema2.PNG
  "Project diagram")
- <br/><br/> <br/><br/> 
+ <br/><br/><br/>
  # Project Demonstration
  
  The first step is the acquisition of data from the connected car, there is 4 types of file extentions tdms files which represent the acceleration data, gps files for tracking gps data, and txt files that contains BUS CAN data with differents variables (ANGLE_VOLANT, REGIME_MOTEUR ...), the duration of every file is 10 minutes.    
  After acquisition, data is sent to an Azure file share with the name "sdmsharefile", and located in "cssdm" storage account.  
-    
+   <br/><br/> 
  ![fileShare](https://sensordatamining.blob.core.windows.net/vehicule-data-output-2/Capture17.PNG
  "fileShare")
- 
+ <br/><br/> <br/>
  ## Blob Storage
  
   After that, data is sent to a blob storage, we need to do that in order to Aumatically trigger the Azure function when a new file is added. For sendint data to the blob trigger we use the az copy function. The blob container name is "vehicule-data-input" ans it is located in "sensordatamining" storage account.
   <br/><br/> 
   ![blob](https://sensordatamining.blob.core.windows.net/vehicule-data-output-2/Capture14.PNG
  "blob") 
- <br/><br/> <br/><br/> 
+ <br/><br/> <br/>
  The folowing is the az copy command i use to send data to blob from fileshare.
  <br/><br/> 
   ![azcopy](https://sensordatamining.blob.core.windows.net/vehicule-data-output-2/Capture16.PNG
  "azcopy")  
- <br/><br/> <br/><br/> 
+ <br/><br/> <br/>
  ## Azure Blob Trigger
  Once a new file is added, the Azure function BlobTrigger is triggered, this function is deployed in the Cloud with the name "vehicule-data-cleaning", and the main functionalities of it is :
   <br/><br/> 
   ![blobtrigger](https://sensordatamining.blob.core.windows.net/vehicule-data-output-2/Capturere13.PNG
  "blobtrigger")  
-    <br/><br/> <br/><br/> 
+    <br/><br/> <br/>
 * Acquisition and preprocessing of connected car data.
 * Send processed data to time series database influxDB.
 
