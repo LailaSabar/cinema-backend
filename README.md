@@ -3,12 +3,15 @@ After exploring the different data formats of the connected car (tdms, gps, and 
 The idea was to automate the data preprocessing process using Azure function Blob Trigger, which triggers the execution of the script when a new file is sent to the input blob container(or a file is modified), and the python script can process the received data and sends it to InfluxDB.   
 To visualize this data we chose Grafana which can easily connect to influxDB, both are installed on an Azure virtual machine, and the solution is hosted on the Nginx web server.   
 Below is the architecture of the project:
-   
-   
-   
+       
+      
+          
 ![Project diagram](https://sensordatamining.blob.core.windows.net/vehicule-data-output-2/Shema2.PNG
  "Project diagram")
- 
+       
+      
+      
+     
  # Project Demonstration
  
  The first step is the acquisition of data from the connected car, there is 4 types of file extentions tdms files which represent the acceleration data, gps files for tracking gps data, and txt files that contains BUS CAN data with differents variables (ANGLE_VOLANT, REGIME_MOTEUR ...), the duration of every file is 10 minutes.    
@@ -32,7 +35,7 @@ Below is the architecture of the project:
  ## Azure Blob Trigger
  Once a new file is added, the Azure function BlobTrigger is triggered, this function is deployed in the Cloud with the name "vehicule-data-cleaning", and the main functionalities of it is :
   
-  ![blobtrigger](https://sensordatamining.blob.core.windows.net/vehicule-data-output-2/Capture13.PNG
+  ![blobtrigger](https://sensordatamining.blob.core.windows.net/vehicule-data-output-2/Capturere13.PNG
  "blobtrigger")  
     
 * Acquisition and preprocessing of connected car data.
