@@ -1,23 +1,23 @@
 # Connected Car Project - Data Processing (v 1.0)
-After exploring the different data formats of the connected car (tdms, gps, and txt), which were shared on a fileshare in Azure, the first objective was to make these data in a valid format in order to send them to a time series database InfluxDB.   
-The idea was to automate the data preprocessing process using Azure function Blob Trigger, which triggers the execution of the script when a new file is sent to the input blob container(or a file is modified), and the python script can process the received data and sends it to InfluxDB.   
+After exploring the different data formats of the connected car (tdms, gps, and txt), which were shared on a fileshare in Azure, the first objective was to make this data in a valid format in order to send it to a time-series database InfluxDB.  
+The idea was to automate the data preprocessing process using Azure function Blob Trigger, which triggers the execution of the script when a new file is sent to the input blob container(or a file is modified), and the python script can process the received data and sends it to InfluxDB.  
 To visualize this data we chose Grafana which can easily connect to influxDB, both are installed on an Azure virtual machine, and the solution is hosted on the Nginx web server.   
-Below is the architecture of the project:
+Below is the architecture of the project.
 <br/><br/>
 ![Project diagram](https://sensordatamining.blob.core.windows.net/vehicule-data-output-2/Shema2.PNG
  "Project diagram")
  <br/><br/>
  # Project Demonstration
  
- The first step is the acquisition of data from the connected car, there is 4 types of file extentions tdms files which represent the acceleration data, gps files for tracking gps data, and txt files that contains BUS CAN data with differents variables (ANGLE_VOLANT, REGIME_MOTEUR ...), the duration of every file is 10 minutes.    
- After acquisition, data is sent to an Azure file share with the name "sdmsharefile", and located in "cssdm" storage account.  
+The first step is the acquisition of data from the connected car, there are 4 types of file extensions, tdms files which represent the acceleration data, gps files for tracking gps data, and txt files that contain bus can data with differents variables (ANGLE_VOLANT, REGIME_MOTEUR ...), the duration of every file is 10 minutes.    
+After the acquisition, data is sent to an Azure file share with the name "sdmsharefile", and located in "cssdm" storage account.  
    <br/><br/> 
  ![fileShare](https://sensordatamining.blob.core.windows.net/vehicule-data-output-2/Capture17.PNG
  "fileShare")
  <br/><br/>
  ## Blob Storage
  
-  After that, data is sent to a blob storage, we need to do that in order to Aumatically trigger the Azure function when a new file is added. For sendint data to the blob trigger we use the az copy function. The blob container name is "vehicule-data-input" ans it is located in "sensordatamining" storage account.
+After that, data is sent to blob storage, we need to do that in order to automatically trigger the Azure function when a new file is added. For sending data to the blob trigger we use the az copy function. The blob container name is "vehicule-data-input" and it is located in "sensordatamining" storage account.
   <br/><br/> 
   ![blob](https://sensordatamining.blob.core.windows.net/vehicule-data-output-2/Capture14.PNG
  "blob") 
@@ -107,13 +107,13 @@ These are the database connection credentials needed to connect influxdb databas
   ![blobtrigger](https://sensordatamining.blob.core.windows.net/vehicule-data-output-2/Capture7.PNG
  "blobtrigger")  
     <br/><br/>
-    
-The following is the dashboard developped using grafana and influxdb database to visualize vehicule data.
+After preparing and organizing data coming from connected vehicule,  sending data to influxdb and connecting it with grafana, at this part we have all ingradients in order vizuaize our data ina a beautiful responsive dashboard that displays various signals patterns and GPS routes for a selected period of time.     
+the dashboard name is test_trackmap.
 <br/><br/>
   ![blobtrigger](https://sensordatamining.blob.core.windows.net/vehicule-data-output-2/Capture1.PNG
  "blobtrigger")  
     <br/><br/>
-the dashborad contains a map with name "GPS TRACKING " that track gps data of the car, this map hav the following featureas :
+the dashborad contains a map with name "GPS TRACKING " that track gps data of the car, this map has the following featureas :
 
 * Places a dot on the map at the current time as you mouse over other panels.
 * Zoom to a range of points by drawing a box by shift-clicking and dragging.
@@ -122,5 +122,21 @@ the dashborad contains a map with name "GPS TRACKING " that track gps data of th
 
 <br/><br/>
   ![blobtrigger](https://sensordatamining.blob.core.windows.net/vehicule-data-output-2/Capture2.PNG
+ "blobtrigger")  
+    <br/><br/>
+    
+In Addition to map we have some time series visualizations, one for acceleration data, and the rest for bus can data.  
+For acceleration data we have to dropdown variables (acc_measures, acc_axes) and an input variable (acc_gt), the user should select the type of accelerator (monoaxe or triaxe) and also the aggregation function (min,max, mean, rms, std ) from the variable acc_measures, then select the wanted axe of accelerator from the variable acc_axes, and with the input variable acc_gt the user can insert a float number and the visualization will show juste the acceleration values greater that the inserted number.   
+Bus can data is seperated in three differents visualization panels, evry panel shows the variable with the same scale, you can select to show one  graphe by clicking on the variable on the legend, or you can select more by clicking on control then selecting all the wanted variables.
+<br/><br/>
+  ![blobtrigger](https://sensordatamining.blob.core.windows.net/vehicule-data-output-2/Capture11.PNG
+ "blobtrigger")  
+
+    <br/><br/>
+  ![blobtrigger](https://sensordatamining.blob.core.windows.net/vehicule-data-output-2/Capture12.PNG
+ "blobtrigger")  
+
+<br/><br/>
+  ![blobtrigger](https://sensordatamining.blob.core.windows.net/vehicule-data-output-2/Capture3.PNG
  "blobtrigger")  
     <br/><br/>
