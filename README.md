@@ -80,10 +80,9 @@ func start
 To acces grafana dashboard you shoud type the following URL in the browser then insert credentials (user: Admin / pass: Hutchinson2021)
 
 After sending data to influxdb database we need to connect grafana to influxdb database, in order to visualize data, for that we need to create a new data source in grafana, or directly use it if it is already created.
-  <br/><br/> 
+<br/><br/> 
   ![blobtrigger](https://sensordatamining.blob.core.windows.net/vehicule-data-output-2/Capture4.PNG
- "blobtrigger")  
-
+ "blobtrigger")
   <br/><br/> 
   ![blobtrigger](https://sensordatamining.blob.core.windows.net/vehicule-data-output-2/Capture9.PNG
  "blobtrigger")  
@@ -91,19 +90,16 @@ After sending data to influxdb database we need to connect grafana to influxdb d
   ![blobtrigger](https://sensordatamining.blob.core.windows.net/vehicule-data-output-2/Capture10.PNG
  "blobtrigger")  
     <br/><br/>
-    
 These are the database connection credentials needed to connect influxdb database to grafana:
 * user: telegraf
 * password: Hutchinson2021
 * database: ConnectedCar_data 
 * port: 8086
 * host: localhost
-
   <br/><br/> 
   ![blobtrigger](https://sensordatamining.blob.core.windows.net/vehicule-data-output-2/capture6.PNG
  "blobtrigger")  
     <br/><br/>
-
   ![blobtrigger](https://sensordatamining.blob.core.windows.net/vehicule-data-output-2/Capture7.PNG
  "blobtrigger")  
     <br/><br/>
@@ -119,12 +115,10 @@ the dashborad contains a map with name "GPS TRACKING " that track gps data of th
 * Zoom to a range of points by drawing a box by shift-clicking and dragging.
 * Multiple map backgrounds: OpenStreetMap, OpenTopoMap, and Satellite imagery.
 * Track and dot colors can be customized in the options tab.
-
 <br/><br/>
   ![blobtrigger](https://sensordatamining.blob.core.windows.net/vehicule-data-output-2/Capture2.PNG
  "blobtrigger")  
     <br/><br/>
-    
 In Addition to map we have some time series visualizations, one for acceleration data, and the rest for bus can data.  
 For acceleration data we have to dropdown variables (acc_measures, acc_axes) and an input variable (acc_gt), the user should select the type of accelerator (monoaxe or triaxe) and also the aggregation function (min,max, mean, rms, std ) from the variable acc_measures, then select the wanted axe of accelerator from the variable acc_axes, and with the input variable acc_gt the user can insert a float number and the visualization will show juste the acceleration values greater that the inserted number.   
 Bus can data is seperated in three differents visualization panels, evry panel shows the variable with the same scale, you can select to show one  graphe by clicking on the variable on the legend, or you can select more by clicking on control then selecting all the wanted variables.
