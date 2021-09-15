@@ -86,7 +86,7 @@ port: 8086
 host: localhost
 
   <br/><br/> 
-  ![blobtrigger](https://sensordatamining.blob.core.windows.net/vehicule-data-output-2/capture 6.PNG
+  ![blobtrigger](https://sensordatamining.blob.core.windows.net/vehicule-data-output-2/capture6.PNG
  "blobtrigger")  
     <br/><br/>
 
