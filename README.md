@@ -76,4 +76,22 @@ func start
 * [Python](https://www.python.org/) - A programming language that allows facilitating data processing
 * [Azure Blob Storage](https://azure.microsoft.com/fr-fr/services/storage/blobs/) -  Blob Storage is optimized for storing massive amounts of unstructured data.
 
+## Grafana dashboard
+After sending data to influxdb database we need to connect grafana to influxdb database, in order to visualize data.
+These are the database connection credentials needed to connect influxdb database to grafana:
+user: telegraf
+password: Hutchinson2021
+database: ConnectedCar_data 
+port: 8086
+host: localhost
+
+  <br/><br/> 
+  ![blobtrigger](https://sensordatamining.blob.core.windows.net/vehicule-data-output-2/Capturere 6.PNG
+ "blobtrigger")  
+    <br/><br/>
+
+  <br/><br/> 
+  ![blobtrigger](https://sensordatamining.blob.core.windows.net/vehicule-data-output-2/Capturere7.PNG
+ "blobtrigger")  
+    <br/><br/>
 
