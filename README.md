@@ -131,13 +131,10 @@ Bus can data is seperated in three differents visualization panels, evry panel s
 <br/><br/>
   ![blobtrigger](https://sensordatamining.blob.core.windows.net/vehicule-data-output-2/Capture11.PNG
  "blobtrigger") 
-<br/><br/>
-
-
+<br/>
   ![blobtrigger](https://sensordatamining.blob.core.windows.net/vehicule-data-output-2/Capture12.PNG
  "blobtrigger")  
-
-<br/><br/>
+<br/>
   ![blobtrigger](https://sensordatamining.blob.core.windows.net/vehicule-data-output-2/Capture3.PNG
  "blobtrigger")  
     <br/><br/>
